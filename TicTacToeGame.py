@@ -42,6 +42,18 @@ def win (current_game):
             print(f"Player {check[0]} is the winner vertically !")
             return True
 
+    all_filled = True
+    for col in range(len(game)):
+        if not all_filled:
+            break
+        for row in range(len(game)):
+            if game[row][col] == 0:
+                all_filled = False
+                break
+            elif (row == (len(game)-1) & col == (len(game)-1)):
+                print("Game Tied")
+                return True
+        
     return False
 
 
@@ -95,7 +107,7 @@ while play:
 
         if win(game):
             game_won = True
-            again = input("Game is over, woulkd you like to play another one? (y/n) ")
+            again = input("Game is over, would you like to play another one? (y/n) ")
             if again.lower() == "y":
                 print("Restarting")
             elif again.lower() == "n":
