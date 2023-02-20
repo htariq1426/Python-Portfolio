@@ -36,12 +36,13 @@ def win (current_game):
         check = [] # a list
 
         for row in game:
-            check.append(row[col]) #append adds value to list
+            check.append(row[col]) 
 
         if all_same(check): 
             print(f"Player {check[0]} is the winner vertically !")
             return True
 
+     # Draw
     all_filled = True
     for col in range(len(game)):
         if not all_filled:
@@ -116,90 +117,3 @@ while play:
             else:
                 print("Not a valid entry, bye")
                 play = False
-
-
-
-'''
-game = [[0,0,0],
-        [0,0,0],
-        [0,0,0]]
-#[] for lists and () for tuples
-# Lists can change values, tuples can't
-#game is a list of lists
-'''
-#game = game_board(game, just_display=True)
-#game = game_board(game, player=1, row=2, column=1)
-
-
-#win(game)
-
-
-#for col, row in zip(reversed(range(len(game))), range(len(game))):
-#    print (col, row)
-# You can use enumerate as well
-# col is indexed from 0 and row is the reversed range of game
-
-
-'''
-DIAGONAL WINNER
-diags = []
-for col, row in enumerate(reversed(range(len(game)))):
-    diags.append(game[row][col])
-
-#print(diags)
-
-
-diags = []
-
-for ix in range(len(game)):
-    diags.append(game[ix][ix])
-
-#print(diags)
-
-'''
-
-''' HARDCODE of DIAGONAL WINNERS
-#if game[0][0] == game[1][1] == game[2][2]:
-#   print("Winner")
-
-#if game[2][0] == game[1][1] == game[0][2]:
-#    print("Winner")
-
-'''
-
-''' VERTICLE WINNER
-for col in range(len(game)):
-    check = [] # a list
-
-    for row in game:
-        check.append(row[col]) #append adds value to list
-
-    if check.count(check[0]) == len(check) and check[0]!=0:     
-            print ("winner!!!")
-
-'''
-
-''' HORIZAONTAL WINNER
-def win (current_game):
-    for row in game:
-        print(row)
-        
-        
-    #    Hardcode of 3 x3   tic tac toe, which is not ideal for scaling
-    #    col1 = row[0]
-    #    col2 = row[1]
-    #    col3 = row[2]
-        
-    #    if col1 == col2 == col3:
-    #        print ("winner!!!")
-        
-
-
-#Taken from stackoverflow,  https://stackoverflow.com/questions/3844801/check-if-all-elements-in-a-list-are-identical 
-
-        if row.count(row[0]) == len(row) and row[0]!=0:     
-            print ("winner!!!")
-            
-
-win(game) 
-'''
